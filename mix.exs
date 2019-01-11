@@ -7,6 +7,8 @@ defmodule Sabotender.MixProject do
       version: "0.0.0",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
+      description: description(),
+      package: package(),
       deps: deps()
     ]
   end
@@ -22,6 +24,19 @@ defmodule Sabotender.MixProject do
   defp deps do
     [
       { :ex_doc,      ">= 0.0.0", only: :dev}
+    ]
+  end
+
+  defp description() do
+    "Sabotender: efficient multi-tasking mechanism"
+  end
+
+  defp package() do
+    [
+      name: "sabotender",
+      maintainers: ["Susumu Yamazaki", "Masakazu Mori", "Yoshihiro Ueno", "Hideki Takase"],
+      licenses: ["Apache 2.0"],
+      links: %{"GitHub" => "https://github.com/zeam-vm/sabotender"}
     ]
   end
 end
